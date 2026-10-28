@@ -1,0 +1,27 @@
+[
+  {
+    "question": "Why do we use overlap when chunking documents?",
+    "reference_answer": "Overlap ensures that a sentence cut at a chunk boundary still appears completely in at least one chunk, so context is not lost. A common overlap is 10 to 20 percent.",
+    "expected_sources": ["rag_notes.md"]
+  },
+  {
+    "question": "How does Reciprocal Rank Fusion combine results?",
+    "reference_answer": "RRF sums 1 / (k + rank) for each document across the ranked lists, with k usually 60. It uses only ranks, so scores from dense search and BM25 do not need to be normalized.",
+    "expected_sources": ["rag_notes.md"]
+  },
+  {
+    "question": "What is the difference between a bi-encoder and a cross-encoder?",
+    "reference_answer": "A bi-encoder embeds query and document separately (fast, approximate); a cross-encoder reads them together and outputs a relevance score (slower, more accurate), so it is used for reranking.",
+    "expected_sources": ["rag_notes.md"]
+  },
+  {
+    "question": "If retrieval is good but groundedness is low, what should I fix?",
+    "reference_answer": "Improve the prompt or the model, because the retriever is returning the right documents but the LLM is not sticking to them.",
+    "expected_sources": ["rag_notes.md"]
+  },
+  {
+    "question": "What is the capital of France?",
+    "reference_answer": "The documents do not contain this information, so the system should say it could not find it.",
+    "expected_sources": []
+  }
+]
